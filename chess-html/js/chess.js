@@ -24,7 +24,7 @@ var onDrop = function(source, target) {
 
   //window.setTimeout(makeRandomMove, 250);
   console.log('sending board to server: ' + game.fen());
-  $.get("http://localhost:8080/move?fen=" + game.fen(), function(data) {
+  $.get("http://ec2.sahiljain.ca:8080/move?fen=" + game.fen(), function(data) {
     console.log("response received");
     var success = game.load(data);
     if (!success) {
